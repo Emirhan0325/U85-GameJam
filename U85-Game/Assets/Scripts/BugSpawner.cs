@@ -60,7 +60,7 @@ public class BugSpawner : MonoBehaviour
             {
                 float scaleTime = hit.collider.gameObject.GetComponent<BugScaler>().ScaleDown();
 
-                DOVirtual.DelayedCall(scaleTime, () => { LeanPool.Despawn(hit.collider.gameObject); });
+                DOVirtual.DelayedCall(scaleTime + 0.001f, () => { LeanPool.Despawn(hit.collider.gameObject); });
             }
         }
     }

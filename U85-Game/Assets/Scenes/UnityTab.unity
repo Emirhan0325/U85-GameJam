@@ -167,13 +167,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e587ab796bfea468647d63b7ae5c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BugPrefabs:
+  bugPrefabs:
   - {fileID: 9000900341164280974, guid: 422f97c60c016f84bad28fa6b3033d48, type: 3}
   - {fileID: 1171037601504494769, guid: 3cc794a8ebe5c8f4aa0c67440e045b34, type: 3}
   - {fileID: 8363257280310490809, guid: d4a527f4d6f44444c9ae456c73ec5145, type: 3}
-  NumOfBugPrefabs: 3
-  NumOfInitalBugs: 10
-  SpawnerInterval: 2
+  numOfBugPrefabs: 3
+  numOfInitialBugs: 10
+  spawnerInterval: 1
 --- !u!1 &1353418401
 GameObject:
   m_ObjectHideFlags: 0
