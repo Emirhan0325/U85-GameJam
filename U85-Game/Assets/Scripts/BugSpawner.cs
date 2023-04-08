@@ -1,31 +1,32 @@
+using DG.Tweening;
 using Lean.Pool;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class BugSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject[] BugPrefabs;
-    [SerializeField] int NumOfBugPrefabs;
-    [SerializeField] int NumOfInitalBugs = 10;
-    [SerializeField] float SpawnerInterval = 2;
+    [SerializeField] GameObject[] bugPrefabs;
+    [SerializeField] int numOfBugPrefabs;
+    [SerializeField] int numOfInitialBugs = 10;
+    [SerializeField] float spawnerInterval = 2;
     private float initialTime;
-    private static float zValue = 0;
+    private static float zValue;
     
     void Start()
     {
         initialTime = Time.timeSinceLevelLoad;
         
-        for (int i = 0; i < NumOfInitalBugs; i++)
+        for (int i = 0; i < numOfInitialBugs; i++)
         {
             RandomSpawner();            
         }
     }
 
-    private void Update()
+    void Update()
     {
         float timer = Time.timeSinceLevelLoad - initialTime;
 
-        if (timer > SpawnerInterval)
+        if (timer > spawnerInterval)
         {
             initialTime = Time.timeSinceLevelLoad;
             RandomSpawner();
@@ -34,9 +35,9 @@ public class BugSpawner : MonoBehaviour
         DestroyBug();
     }
 
-    private void RandomSpawner()
+    void RandomSpawner()
     {
-        GameObject bugPrefab = BugPrefabs[Random.Range(0, NumOfBugPrefabs)];
+        GameObject bugPrefab = bugPrefabs[Random.Range(0, numOfBugPrefabs)];
         
         // Ekran boyutlarını hard code yapabiliriz
         var newPositionX = Random.Range(-10, 10);
@@ -46,7 +47,7 @@ public class BugSpawner : MonoBehaviour
         LeanPool.Spawn(bugPrefab, newVector, Quaternion.identity, transform);
     }
 
-    private void DestroyBug()
+    void DestroyBug()
     {
         if (Input.GetMouseButtonDown(0))
         { 
@@ -57,7 +58,9 @@ public class BugSpawner : MonoBehaviour
             
             if (hit.collider != null)
             {
-                LeanPool.Despawn(hit.collider.gameObject);
+                float scaleTime = hit.collider.gameObject.GetComponent<BugScaler>().ScaleDown();
+
+                DOVirtual.DelayedCall(scaleTime, () => { LeanPool.Despawn(hit.collider.gameObject); });
             }
         }
     }
