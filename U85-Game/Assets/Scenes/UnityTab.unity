@@ -172,8 +172,8 @@ MonoBehaviour:
   - {fileID: 1171037601504494769, guid: 3cc794a8ebe5c8f4aa0c67440e045b34, type: 3}
   - {fileID: 8363257280310490809, guid: d4a527f4d6f44444c9ae456c73ec5145, type: 3}
   NumOfBugPrefabs: 3
-  NumOfInitalBugs: 3
-  SpawnerInterval: 3
+  NumOfInitalBugs: 10
+  SpawnerInterval: 2
 --- !u!1 &1353418401
 GameObject:
   m_ObjectHideFlags: 0
