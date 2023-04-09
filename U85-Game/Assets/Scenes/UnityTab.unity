@@ -173,7 +173,8 @@ MonoBehaviour:
   - {fileID: 8363257280310490809, guid: d4a527f4d6f44444c9ae456c73ec5145, type: 3}
   numOfBugPrefabs: 3
   numOfInitialBugs: 10
-  spawnerInterval: 1
+  spawnerInterval: 0.6
+  numOfDeadBugs: {fileID: 11400000, guid: 8b385e12d0b0c1440b17fc8e2dd45cf4, type: 2}
 --- !u!1 &1353418401
 GameObject:
   m_ObjectHideFlags: 0
