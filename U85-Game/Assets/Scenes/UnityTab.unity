@@ -168,13 +168,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bugPrefabs:
-  - {fileID: 9000900341164280974, guid: 422f97c60c016f84bad28fa6b3033d48, type: 3}
-  - {fileID: 1171037601504494769, guid: 3cc794a8ebe5c8f4aa0c67440e045b34, type: 3}
-  - {fileID: 8363257280310490809, guid: d4a527f4d6f44444c9ae456c73ec5145, type: 3}
+  - {fileID: 1171037601504494769, guid: 117210cd8a56c344f80084bcce21cf72, type: 3}
+  - {fileID: 1171037601504494769, guid: 0b2d9a8cc08bf844d8b111e2d0586fac, type: 3}
+  - {fileID: 1171037601504494769, guid: 5048bd99bb7dfda42b65d692ffc0f539, type: 3}
   numOfBugPrefabs: 3
   numOfInitialBugs: 10
   spawnerInterval: 0.6
   numOfDeadBugs: {fileID: 11400000, guid: 8b385e12d0b0c1440b17fc8e2dd45cf4, type: 2}
+  scaleConst: 2
+  scaleTime: 0.4
 --- !u!1 &1353418401
 GameObject:
   m_ObjectHideFlags: 0
