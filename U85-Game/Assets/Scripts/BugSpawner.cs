@@ -1,6 +1,7 @@
 using DG.Tweening;
 using Lean.Pool;
 using UnityEngine;
+using Utils.RefValue;
 using Random = UnityEngine.Random;
 
 public class BugSpawner : MonoBehaviour
@@ -8,12 +9,18 @@ public class BugSpawner : MonoBehaviour
     [SerializeField] GameObject[] bugPrefabs;
     [SerializeField] int numOfBugPrefabs;
     [SerializeField] int numOfInitialBugs = 10;
-    [SerializeField] float spawnerInterval = 2;
+    [SerializeField] float spawnerInterval = 0.6f;
+    [SerializeField] IntRef numOfDeadBugs;
     private float initialTime;
     private static float zValue;
     
     void Start()
     {
+        if (numOfDeadBugs != null)
+        {
+            numOfDeadBugs.Value = 0;
+        }
+        
         initialTime = Time.timeSinceLevelLoad;
         
         for (int i = 0; i < numOfInitialBugs; i++)
@@ -44,7 +51,9 @@ public class BugSpawner : MonoBehaviour
         var newPositionY = Random.Range(-3, 3);
         var newVector = new Vector3(newPositionX, newPositionY, zValue -= 0.0001f);
        
-        LeanPool.Spawn(bugPrefab, newVector, Quaternion.identity, transform);
+        var bug= LeanPool.Spawn(bugPrefab, newVector, Quaternion.identity, transform);
+        
+        bug.GetComponent<BugScaler>().ScaleUp();
     }
 
     void DestroyBug()
@@ -61,6 +70,11 @@ public class BugSpawner : MonoBehaviour
                 float scaleTime = hit.collider.gameObject.GetComponent<BugScaler>().ScaleDown();
 
                 DOVirtual.DelayedCall(scaleTime + 0.001f, () => { LeanPool.Despawn(hit.collider.gameObject); });
+
+                if (numOfDeadBugs != null)
+                {
+                    numOfDeadBugs.Value++;
+                }
             }
         }
     }
