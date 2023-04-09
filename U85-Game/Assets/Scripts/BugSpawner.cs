@@ -13,6 +13,7 @@ public class BugSpawner : MonoBehaviour
     [SerializeField] IntRef numOfDeadBugs;
     [SerializeField] float scaleConst = 2f;
     [SerializeField] float scaleTime = 0.4f;
+    [SerializeField] float UISize = 1f;
     private float initialTime;
     private static float zValue;
     private float[] screenBorders = {0, 0, 0, 0};
@@ -54,13 +55,11 @@ public class BugSpawner : MonoBehaviour
     {
         GameObject bugPrefab = bugPrefabs[Random.Range(0, numOfBugPrefabs)];
         
-        var p1 = gameObject.transform.TransformPoint(0, 0, 0);
-        var p2 = gameObject.transform.TransformPoint(1, 1, 0);
-        var w = (p2.x - p1.x) * scaleConst;
-        var h = (p2.y - p1.y) * scaleConst;
+        var w = bugPrefab.GetComponent<SpriteRenderer>().bounds.size.x / 2 * scaleConst;
+        var h = bugPrefab.GetComponent<SpriteRenderer>().bounds.size.y / 2 * scaleConst;
         
-        var newPositionX = Random.Range(screenBorders[0] + w/2, screenBorders[1] - w/2);
-        var newPositionY = Random.Range(screenBorders[2] + h/2, screenBorders[3] - h/2);
+        var newPositionX = Random.Range(screenBorders[0] + w, screenBorders[1] - w);
+        var newPositionY = Random.Range(screenBorders[2] + h, screenBorders[3] - h - UISize);
         var newVector = new Vector3(newPositionX, newPositionY, zValue -= 0.0001f);
        
         var bug= LeanPool.Spawn(bugPrefab, newVector, Quaternion.identity, transform);
