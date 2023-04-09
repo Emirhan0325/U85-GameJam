@@ -25,7 +25,6 @@ namespace DefaultNamespace
                 _isSleep = false;
                 LevelFailed.Raise();
             }
-            
         }
     }
 }
