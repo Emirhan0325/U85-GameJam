@@ -14,6 +14,8 @@ public class BugSpawner : MonoBehaviour
     [SerializeField] float scaleConst = 2f;
     [SerializeField] float scaleTime = 0.4f;
     [SerializeField] float UISize = 1f;
+    public AudioSource _audio;
+    public AudioClip _clipClick;
     private float initialTime;
     private static float zValue;
     private float[] screenBorders = {0, 0, 0, 0};
@@ -53,6 +55,7 @@ public class BugSpawner : MonoBehaviour
 
     void RandomSpawner()
     {
+        _audio.Play();
         GameObject bugPrefab = bugPrefabs[Random.Range(0, numOfBugPrefabs)];
         
         var w = bugPrefab.GetComponent<SpriteRenderer>().bounds.size.x / 2 * scaleConst;
@@ -71,6 +74,7 @@ public class BugSpawner : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         { 
+            _audio.PlayOneShot(_clipClick);
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
             

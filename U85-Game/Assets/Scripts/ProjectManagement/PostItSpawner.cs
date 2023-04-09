@@ -11,6 +11,7 @@ namespace ProjectManagement
     {
         [SerializeField] private GameObject PostIt;
         [SerializeField] private float RepeatTime;
+        public AudioSource _audio;
 
         private float _timeLeft;
 
@@ -27,6 +28,7 @@ namespace ProjectManagement
 
         private void SpawnPostIt()
         {
+            _audio.Play();
             var newPositionX = Random.Range(-8, -6);
             var newPositionY = Random.Range(-4, 4);
             var newVector = new Vector2(newPositionX, newPositionY);
