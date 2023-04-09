@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class BalanceCounter : MonoBehaviour
 {
-    [SerializeField] TMP_Text _text;
+    //[SerializeField] TMP_Text _text;
     private float _BalanceSituation;
     [SerializeField] private Transform _TeraziTransform;
     
@@ -33,7 +33,7 @@ public class BalanceCounter : MonoBehaviour
         if(a == Quaternion.identity)
         {
             _BalanceSituation++;
-            _text.text = _BalanceSituation.ToString();
+            //_text.text = _BalanceSituation.ToString();
             _slider.value = _BalanceSituation;
             _slider.fillRect.GetComponentInChildren<Image>().color = _gradient.Evaluate(_BalanceSituation/_slider.maxValue);
         }

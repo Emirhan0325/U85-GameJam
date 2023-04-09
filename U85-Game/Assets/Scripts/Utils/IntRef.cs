@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Utils.RefValue
+namespace Utils
 {
     [CreateAssetMenu]
     public class IntRef : ScriptableObject

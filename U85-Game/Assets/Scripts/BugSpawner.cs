@@ -1,7 +1,7 @@
 using DG.Tweening;
 using Lean.Pool;
 using UnityEngine;
-using Utils.RefValue;
+using Utils;
 using Random = UnityEngine.Random;
 
 public class BugSpawner : MonoBehaviour
