@@ -3,10 +3,7 @@ using UnityEngine;
 
 public class BugScaler : MonoBehaviour
 {
-    [SerializeField] int scaleConst = 2;
-    [SerializeField] private float scaleTime = 0.4f;
-    
-    public float ScaleDown ()
+    public float ScaleDown (float scaleTime)
     {
         transform.DOScale(Vector3.zero, scaleTime)
             .SetEase(Ease.Flash);
@@ -14,7 +11,7 @@ public class BugScaler : MonoBehaviour
         return scaleTime;
     }
 
-    public void ScaleUp()
+    public void ScaleUp(float scaleTime, float scaleConst)
     {
         Vector3 originalScale = transform.localScale;
         transform.localScale = Vector3.zero;
