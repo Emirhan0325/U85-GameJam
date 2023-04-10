@@ -110,8 +110,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fb249fbb7b94d4640a34e7acf23ce769, type: 2}
   - {fileID: 11400000, guid: 97fbf67f4f72582419a71cd797c52647, type: 2}
   - {fileID: 11400000, guid: 9f9d5a1ab0f944c4b8050b1787123cd6, type: 2}
-  KanbanGameValue: {fileID: 11400000, guid: 948567c4b64d6ca438682806263e718a, type: 2}
-  TrailObject: {fileID: 0}
+  KanbanGameValue: {fileID: 11400000, guid: 4dfc716de869f0e49a966d0b851528e3, type: 2}
 --- !u!50 &258991764160967198
 Rigidbody2D:
   serializedVersion: 4

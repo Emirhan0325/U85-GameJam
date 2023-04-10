@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb96b90e8e0d01e40967b2969eb48b6b, type: 3}
-  m_Name: NumOfDeadBugs
+  m_Script: {fileID: 11500000, guid: 212e7f1316734693b104fb8289c8168b, type: 3}
+  m_Name: LawGame
   m_EditorClassIdentifier: 

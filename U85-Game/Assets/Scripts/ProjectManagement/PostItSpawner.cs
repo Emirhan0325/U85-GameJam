@@ -14,9 +14,12 @@ namespace ProjectManagement
         public AudioSource _audio;
 
         private float _timeLeft;
+        private bool _isActive = true;
 
         private void Update()
         {
+            if(!_isActive)
+                return;
             //timer
             _timeLeft -= Time.deltaTime;
             if (_timeLeft < 0)
@@ -36,6 +39,11 @@ namespace ProjectManagement
             paper.transform.localScale = Vector3.zero;
             paper.transform.position = newVector;
             paper.transform.DOScale(Vector3.one, .5f);
+        }
+
+        public void SetActive(bool flag)
+        {
+            _isActive = flag;
         }
         
     }

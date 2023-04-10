@@ -13,7 +13,7 @@ namespace ProjectManagement
         [SerializeField] private List<Material> Colors;
         [SerializeField] private SpriteRenderer Sprite;
         [SerializeField] private List<TransformRef> Areas;
-        [SerializeField] private IntRef KanbanGameValue;
+        [SerializeField] private FloatRef KanbanGameValue;
 
         private int _currentSprite;
         private int _nextSprite;

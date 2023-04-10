@@ -10,7 +10,7 @@ public class BugSpawner : MonoBehaviour
     [SerializeField] int numOfBugPrefabs;
     [SerializeField] int numOfInitialBugs = 10;
     [SerializeField] float spawnerInterval = 0.6f;
-    [SerializeField] IntRef numOfDeadBugs;
+    [SerializeField] FloatRef ErrorGame;
     [SerializeField] float scaleConst = 2f;
     [SerializeField] float scaleTime = 0.4f;
     [SerializeField] float UISize = 1f;
@@ -25,11 +25,6 @@ public class BugSpawner : MonoBehaviour
         screenBorders[1] = Camera.main.ViewportToWorldPoint(new Vector3(1,0,0)).x; // rightY
         screenBorders[2]= Camera.main.ViewportToWorldPoint(new Vector3(0,0,0)).y; // upY
         screenBorders[3] = Camera.main.ViewportToWorldPoint(new Vector3(0,1,0)).y; // downY
-
-        if (numOfDeadBugs != null)
-        {
-            numOfDeadBugs.Value = 0;
-        }
         
         initialTime = Time.timeSinceLevelLoad;
         
@@ -85,9 +80,9 @@ public class BugSpawner : MonoBehaviour
 
                 DOVirtual.DelayedCall(scaleTime + 0.001f, () => { LeanPool.Despawn(hit.collider.gameObject); });
 
-                if (numOfDeadBugs != null)
+                if (ErrorGame != null)
                 {
-                    numOfDeadBugs.Value++;
+                    ErrorGame.Value++;
                 }
             }
         }

@@ -296,10 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a851aeb58451741ad8b7378f095a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PrefabBall: {fileID: 1074645875774956443, guid: 9176c0a71ae2c944d82282eeb370a5fc, type: 3}
-  _SpawnPoint: {fileID: 0}
-  _canPress: 1
-  _SpawnButton: {fileID: 0}
+  PrefabBall: {fileID: 1074645875774956443, guid: 9176c0a71ae2c944d82282eeb370a5fc, type: 3}
 --- !u!1 &8868406822218100851
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +529,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8868406823122849103}
   - component: {fileID: 8868406823122849100}
-  - component: {fileID: 8868406823122849106}
   - component: {fileID: 8868406823122849102}
   m_Layer: 0
   m_Name: Scale
@@ -610,21 +606,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8868406823122849106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8868406823122849107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b98d1e35719a6d409e0903f72ec3880, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pivot: {fileID: 8868406823122849107}
-  _Isleft: 1
-  _Isright: 1
 --- !u!114 &8868406823122849102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,38 +618,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d067663fe530a0e409107207c99669aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LawGame: {fileID: 11400000, guid: bc68ebb5dd5fd9d4da5a2a7fb9471386, type: 2}
   _TeraziTransform: {fileID: 8868406823122849103}
   fillSpeed: 0.1
-  _slider: {fileID: 0}
-  _gradient:
-    serializedVersion: 2
-    key0: {r: 0, g: 1, b: 0.1772747, a: 1}
-    key1: {r: 0.9818833, g: 1, b: 0, a: 1}
-    key2: {r: 1, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 32575
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
 --- !u!1 &8868406823552354894
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,7 +744,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a851aeb58451741ad8b7378f095a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PrefabBall: {fileID: 1074645875774956443, guid: 9176c0a71ae2c944d82282eeb370a5fc, type: 3}
-  _SpawnPoint: {fileID: 0}
-  _canPress: 1
-  _SpawnButton: {fileID: 0}
+  PrefabBall: {fileID: 1074645875774956443, guid: 9176c0a71ae2c944d82282eeb370a5fc, type: 3}
