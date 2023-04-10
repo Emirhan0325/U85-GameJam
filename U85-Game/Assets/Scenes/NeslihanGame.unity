@@ -571,10 +571,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eye Blink
       objectReference: {fileID: 0}
-    - target: {fileID: 8131229246915995174, guid: 174e9df2d69e526438b17e49fc6dfd60, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174e9df2d69e526438b17e49fc6dfd60, type: 3}
 --- !u!1 &340224739
