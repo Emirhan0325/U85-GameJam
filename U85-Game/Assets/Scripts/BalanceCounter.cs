@@ -10,8 +10,9 @@ using Utils;
 public class BalanceCounter : MonoBehaviour
 {
     [SerializeField] private FloatRef LawGame;
+    [SerializeField] private FloatRef BlinkCounter;
     [SerializeField] private Transform _TeraziTransform;
-    [SerializeField] private float fillSpeed = 0.1f;
+    [SerializeField] private float IncreaseAmount = 0.1f;
 
     private void Update()
     {
@@ -19,7 +20,8 @@ public class BalanceCounter : MonoBehaviour
         
         if(a == Quaternion.identity)
         {
-            LawGame.Value += fillSpeed;
+            BlinkCounter.Value++;
+            LawGame.Value += IncreaseAmount;
         }
         
     }

@@ -53,6 +53,8 @@ MonoBehaviour:
   numOfInitialBugs: 10
   spawnerInterval: 0.5
   ErrorGame: {fileID: 11400000, guid: 58b4cc0624c419b42a8f13b5991097c7, type: 2}
+  BlinkCounter: {fileID: 11400000, guid: bf138f1e354888a49baa6d659b4286da, type: 2}
+  IncreaseAmount: 5
   scaleConst: 2
   scaleTime: 0.4
   UISize: 1

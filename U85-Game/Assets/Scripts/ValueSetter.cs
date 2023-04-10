@@ -13,5 +13,10 @@ namespace DefaultNamespace
         {
             Value.Value = StartValue;
         }
+
+        public void OnLevelFailed()
+        {
+            Value.Value = StartValue;
+        }
     }
 }

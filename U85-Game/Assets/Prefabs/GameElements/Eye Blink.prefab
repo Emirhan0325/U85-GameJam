@@ -216,5 +216,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopLid: {fileID: 8131229246402003267}
   BottomLid: {fileID: 8131229245881081932}
-  IsTired: 0
+  LevelFailed: {fileID: 11400000, guid: 13fcc0690715aeb44b814fb48de74071, type: 2}
+  IsTired: {fileID: 11400000, guid: e1bd4abd45980354a9cb55378456b6ee, type: 2}
   ScaleConst: 0.5

@@ -48,3 +48,5 @@ MonoBehaviour:
   Law: {fileID: 11400000, guid: bc68ebb5dd5fd9d4da5a2a7fb9471386, type: 2}
   Error: {fileID: 11400000, guid: 58b4cc0624c419b42a8f13b5991097c7, type: 2}
   LevelFailed: {fileID: 11400000, guid: 13fcc0690715aeb44b814fb48de74071, type: 2}
+  BlinkCounter: {fileID: 11400000, guid: bf138f1e354888a49baa6d659b4286da, type: 2}
+  IsTired: {fileID: 11400000, guid: e1bd4abd45980354a9cb55378456b6ee, type: 2}

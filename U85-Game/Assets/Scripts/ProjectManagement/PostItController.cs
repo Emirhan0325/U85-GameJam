@@ -14,6 +14,8 @@ namespace ProjectManagement
         [SerializeField] private SpriteRenderer Sprite;
         [SerializeField] private List<TransformRef> Areas;
         [SerializeField] private FloatRef KanbanGameValue;
+        [SerializeField] private FloatRef BlinkCounter;
+        [SerializeField] private float IncreaseAmount = 5;
 
         private int _currentSprite;
         private int _nextSprite;
@@ -51,7 +53,8 @@ namespace ProjectManagement
             }
             else
             {
-                KanbanGameValue.Value++;
+                BlinkCounter.Value++;
+                KanbanGameValue.Value += IncreaseAmount;
                 transform.DOScale(Vector3.zero, .5f).OnComplete(() =>
                 {
                     Destroy(gameObject);

@@ -11,6 +11,8 @@ public class BugSpawner : MonoBehaviour
     [SerializeField] int numOfInitialBugs = 10;
     [SerializeField] float spawnerInterval = 0.6f;
     [SerializeField] FloatRef ErrorGame;
+    [SerializeField] FloatRef BlinkCounter;
+    [SerializeField] private float IncreaseAmount = 5;
     [SerializeField] float scaleConst = 2f;
     [SerializeField] float scaleTime = 0.4f;
     [SerializeField] float UISize = 1f;
@@ -82,7 +84,8 @@ public class BugSpawner : MonoBehaviour
 
                 if (ErrorGame != null)
                 {
-                    ErrorGame.Value++;
+                    ErrorGame.Value += IncreaseAmount;
+                    BlinkCounter.Value++;
                 }
             }
         }
